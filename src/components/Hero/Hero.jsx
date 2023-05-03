@@ -174,16 +174,16 @@ const Hero = () => {
 
           <div className="home__blob grid">
             <div className="home__perfil">
-              <img src="/src/assets/img/me.jpg" alt="home perfil" />
+              <img src="/images/me.jpg" alt="home perfil" />
             </div>
 
             <img
-              src="/src/assets/img/shape-wawes.svg"
+              src="/images/shape-wawes.svg"
               alt=""
               className="home__shape-wawes"
             />
             <img
-              src="/src/assets/img/shape-circle.svg"
+              src="/images/shape-circle.svg"
               alt=""
               className="home__shape-circle"
             />
