@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import SwitchLanguage from "../SwitchLanguage/SwitchLanguage";
+import { useTranslation } from "react-i18next";
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -7,6 +9,7 @@ const StyledHeader = styled.header`
   bottom: 2rem;
   left: 0;
   z-index: var(--z-fixed);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, .25); */
   @media (min-width: 1023px) {
     top: 0;
     bottom: initial;
@@ -136,9 +139,9 @@ const StyledHeader = styled.header`
     bottom: 2rem;
   }
 `;
-
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const { t } = useTranslation();
 
   const navMenu = document.getElementById("nav-menu"),
     navLink = document.querySelectorAll(".nav__link");
@@ -153,10 +156,13 @@ const Header = () => {
   }, []);
 
   return (
-    <StyledHeader className="header" id="header">
+    <StyledHeader
+      className="header backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none"
+      id="header"
+    >
       <nav className="nav container">
         <a href="#" className="nav__logo">
-          Travis
+          {t("home.name")}
         </a>
 
         <div
@@ -212,6 +218,7 @@ const Header = () => {
 
         <div className="nav__buttons">
           {/* <i className="ri-moon-line change-theme" id="theme-button"></i> */}
+          <SwitchLanguage />
 
           <div
             className="nav__toggle"
