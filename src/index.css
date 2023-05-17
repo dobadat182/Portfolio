@@ -4,7 +4,7 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
-
+  
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(207, 65%, 65%);
@@ -19,7 +19,8 @@
   --gradient-color: linear-gradient(180deg,
                       hsla(207, 48%, 72%, 0),
                       hsla(207, 65%, 65%, 1));
-
+  --background-end-rgb: 255,255,255;
+  --background-start-rgb: 214,219,220;
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: 'Roboto', sans-serif;

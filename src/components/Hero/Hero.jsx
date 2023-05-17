@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import avatar from "../../assets/img/me.jpg";
+import shapeWawes from "../../assets/img/shape-wawes.svg";
+import shapeCircle from "../../assets/img/shape-circle.svg";
+import { useTranslation } from "react-i18next";
 
 const StyledHero = styled.div`
   height: 100vh;
@@ -162,31 +166,25 @@ const StyledHero = styled.div`
 `;
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <StyledHero id="home">
       <div className="home__container container mx-auto grid section__border">
         <div className="home__data grid">
           <h1 className="home__title">
-            Hi, I'm Dat <br />
-            Frontend Developer <br />
-            Based In Ho Chi Minh
+            {t("home.title.lineOne")} <br />
+            {t("home.title.jobName")} <br />
+            {t("home.title.location")}
           </h1>
 
           <div className="home__blob grid">
             <div className="home__perfil">
-              <img src="/images/me.jpg" alt="home perfil" />
+              <img src={avatar} alt="home perfil" />
             </div>
 
-            <img
-              src="/images/shape-wawes.svg"
-              alt=""
-              className="home__shape-wawes"
-            />
-            <img
-              src="/images/shape-circle.svg"
-              alt=""
-              className="home__shape-circle"
-            />
+            <img src={shapeWawes} alt="" className="home__shape-wawes" />
+            <img src={shapeCircle} alt="" className="home__shape-circle" />
           </div>
 
           <ul className="home__social">
