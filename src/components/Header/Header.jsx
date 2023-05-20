@@ -6,24 +6,30 @@ import { useTranslation } from "react-i18next";
 const StyledHeader = styled.header`
   width: 100%;
   position: fixed;
-  top: 0;
-  left: 0;
-  translate: 0 -80px;
+  bottom: 1rem;
   box-shadow: 0 10px 20px rgba(0 0 0 / 10%);
-  background: #6b63ff;
+  background: transparent;
   transition: 300ms;
   z-index: var(--z-fixed);
+  padding: 0 1rem;
+  box-shadow: none;
+  translate: 0 64px;
+
   &.visible {
-    top: 0;
     translate: 0;
   }
-
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, .25); */
   @media (min-width: 1023px) {
     top: 0;
     bottom: initial;
     background-color: var(--body-color);
     transform: 0.4s;
+    translate: 0 -80px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+
+    &.visible {
+      top: 0;
+      translate: 0;
+    }
   }
   nav {
     height: calc(var(--header-height) + 0.5rem);
@@ -124,10 +130,10 @@ const StyledHeader = styled.header`
       }
       @media screen and (max-width: 1023px) {
         position: fixed;
-        width: 88%;
+        width: 100%;
         left: 0;
         right: 0;
-        bottom: -60%;
+        bottom: -20rem;
         margin: 0 auto;
         background-color: var(--body-color);
         box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
@@ -145,7 +151,7 @@ const StyledHeader = styled.header`
   }
 
   .show-menu {
-    bottom: 2rem;
+    bottom: 0rem;
   }
 `;
 const Header = () => {
@@ -180,12 +186,10 @@ const Header = () => {
 
   return (
     <StyledHeader
-      className={`header backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none ${
-        isNavbarVisible ? "visible" : ""
-      }`}
+      className={`header ${isNavbarVisible ? "visible" : ""}`}
       id="header"
     >
-      <nav className="nav container">
+      <nav className="nav container backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none">
         <a href="#" className="nav__logo">
           {t("home.name")}
         </a>
