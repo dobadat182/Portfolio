@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import SwitchLanguage from "../SwitchLanguage/SwitchLanguage";
 import { useTranslation } from "react-i18next";
@@ -6,15 +6,30 @@ import { useTranslation } from "react-i18next";
 const StyledHeader = styled.header`
   width: 100%;
   position: fixed;
-  bottom: 2rem;
-  left: 0;
+  bottom: 1rem;
+  box-shadow: 0 10px 20px rgba(0 0 0 / 10%);
+  background: transparent;
+  transition: 300ms;
   z-index: var(--z-fixed);
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, .25); */
+  padding: 0 1rem;
+  box-shadow: none;
+  translate: 0 64px;
+
+  &.visible {
+    translate: 0;
+  }
   @media (min-width: 1023px) {
     top: 0;
     bottom: initial;
     background-color: var(--body-color);
     transform: 0.4s;
+    translate: 0 -80px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+
+    &.visible {
+      top: 0;
+      translate: 0;
+    }
   }
   nav {
     height: calc(var(--header-height) + 0.5rem);
@@ -115,10 +130,10 @@ const StyledHeader = styled.header`
       }
       @media screen and (max-width: 1023px) {
         position: fixed;
-        width: 88%;
+        width: 100%;
         left: 0;
         right: 0;
-        bottom: -60%;
+        bottom: -20rem;
         margin: 0 auto;
         background-color: var(--body-color);
         box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
@@ -136,31 +151,45 @@ const StyledHeader = styled.header`
   }
 
   .show-menu {
-    bottom: 2rem;
+    bottom: 0rem;
   }
 `;
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const { t } = useTranslation();
 
-  const navMenu = document.getElementById("nav-menu"),
-    navLink = document.querySelectorAll(".nav__link");
+  const navMenu = document.getElementById("nav-menu");
+  const navLink = document.querySelectorAll(".nav__link");
+
+  const lastScrollTop = useRef(0);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   const linkAction = () => {
     navMenu.classList.remove("show-menu");
     navLink.forEach((n) => n.addEventListener("click", linkAction));
   };
 
+  const handleScroll = () => {
+    const { pageYOffset } = window;
+    if (pageYOffset > lastScrollTop.current) {
+      setIsNavbarVisible(false);
+    } else if (pageYOffset < lastScrollTop.current) {
+      setIsNavbarVisible(true);
+    }
+    lastScrollTop.current = pageYOffset;
+  };
+
   useEffect(() => {
     linkAction;
+    window.addEventListener("scroll", handleScroll, { passive: true });
   }, []);
 
   return (
     <StyledHeader
-      className="header backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none"
+      className={`header ${isNavbarVisible ? "visible" : ""}`}
       id="header"
     >
-      <nav className="nav container">
+      <nav className="nav container backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none">
         <a href="#" className="nav__logo">
           {t("home.name")}
         </a>
