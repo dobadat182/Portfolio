@@ -5,7 +5,7 @@ import shapeCircle from "../../assets/img/shape-circle.svg";
 import { useTranslation } from "react-i18next";
 
 const StyledHero = styled.div`
-  height: 100vh;
+  height: 300vh;
   margin-top: 70px;
 
   .home {

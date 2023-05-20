@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import SwitchLanguage from "../SwitchLanguage/SwitchLanguage";
 import { useTranslation } from "react-i18next";
@@ -6,9 +6,18 @@ import { useTranslation } from "react-i18next";
 const StyledHeader = styled.header`
   width: 100%;
   position: fixed;
-  bottom: 2rem;
+  top: 0;
   left: 0;
+  translate: 0 -80px;
+  box-shadow: 0 10px 20px rgba(0 0 0 / 10%);
+  background: #6b63ff;
+  transition: 300ms;
   z-index: var(--z-fixed);
+  &.visible {
+    top: 0;
+    translate: 0;
+  }
+
   /* box-shadow: 0 0 10px rgba(0, 0, 0, .25); */
   @media (min-width: 1023px) {
     top: 0;
@@ -143,21 +152,37 @@ const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const { t } = useTranslation();
 
-  const navMenu = document.getElementById("nav-menu"),
-    navLink = document.querySelectorAll(".nav__link");
+  const navMenu = document.getElementById("nav-menu");
+  const navLink = document.querySelectorAll(".nav__link");
+
+  const lastScrollTop = useRef(0);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   const linkAction = () => {
     navMenu.classList.remove("show-menu");
     navLink.forEach((n) => n.addEventListener("click", linkAction));
   };
 
+  const handleScroll = () => {
+    const { pageYOffset } = window;
+    if (pageYOffset > lastScrollTop.current) {
+      setIsNavbarVisible(false);
+    } else if (pageYOffset < lastScrollTop.current) {
+      setIsNavbarVisible(true);
+    }
+    lastScrollTop.current = pageYOffset;
+  };
+
   useEffect(() => {
     linkAction;
+    window.addEventListener("scroll", handleScroll, { passive: true });
   }, []);
 
   return (
     <StyledHeader
-      className="header backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none"
+      className={`header backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none ${
+        isNavbarVisible ? "visible" : ""
+      }`}
       id="header"
     >
       <nav className="nav container">
