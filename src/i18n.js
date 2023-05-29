@@ -12,7 +12,7 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         home: {
-          name: "Travis",
+          name: "Dzt",
           title: {
             lineOne: " Hi, I'm Dat",
             jobName: "Frontend Developer",

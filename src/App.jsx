@@ -1,10 +1,10 @@
-import Header from "./components/Header/Header";
+import Nav from "./components/Navbar/Nav";
 import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <Header />
+      <Nav />
       <Home />
     </>
   );
