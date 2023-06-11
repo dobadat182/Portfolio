@@ -8,7 +8,6 @@ const StyledButton = styled.button`
     padding: 0.3rem 2rem;
     outline: none;
     text-decoration: none;
-    display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -93,7 +92,7 @@ const DownloadCV = (props) => {
     const [state] = useState(props);
 
     return (
-        <StyledButton title="Download CV" className="hidden md:block">
+        <StyledButton title="Download CV" className="hidden md:flex">
             <a href={ExampleDoc} download="MyExampleDoc">
                 <span>
                     {state.text} <i className="ri-download-2-line"></i>

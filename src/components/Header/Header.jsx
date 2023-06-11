@@ -182,7 +182,7 @@ const StyledHeader = styled.header`
 //     }
 // }
 
-const Nav = () => {
+const Header = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
     const [toggleNavShadow, setToggleNavShadow] = useState(false);
     const { t } = useTranslation();
@@ -227,7 +227,7 @@ const Nav = () => {
 
     return (
         <StyledHeader
-            className={`header backdrop-blur-lg ${
+            className={`header md:backdrop-blur-lg ${
                 isNavbarVisible ? 'visible' : ''
             }`}
             id="header"
@@ -307,4 +307,4 @@ const Nav = () => {
     );
 };
 
-export default Nav;
+export default Header;
