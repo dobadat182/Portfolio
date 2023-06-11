@@ -1,6 +1,6 @@
-import { useState } from "react";
-import styled from "styled-components";
-import ExampleDoc from "../../assets/files/sample.pdf";
+import { useState } from 'react';
+import styled from 'styled-components';
+import ExampleDoc from '../../assets/files/sample.pdf';
 
 const StyledButton = styled.button`
     position: relative;
@@ -8,7 +8,6 @@ const StyledButton = styled.button`
     padding: 0.3rem 2rem;
     outline: none;
     text-decoration: none;
-    display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -51,7 +50,7 @@ const StyledButton = styled.button`
     }
     &::before,
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         right: 0;
         bottom: 0;
@@ -93,7 +92,7 @@ const DownloadCV = (props) => {
     const [state] = useState(props);
 
     return (
-        <StyledButton title="Download CV">
+        <StyledButton title="Download CV" className="hidden md:flex">
             <a href={ExampleDoc} download="MyExampleDoc">
                 <span>
                     {state.text} <i className="ri-download-2-line"></i>
