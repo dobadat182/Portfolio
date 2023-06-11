@@ -1,6 +1,6 @@
-import { useState } from "react";
-import styled from "styled-components";
-import ExampleDoc from "../../assets/files/sample.pdf";
+import { useState } from 'react';
+import styled from 'styled-components';
+import ExampleDoc from '../../assets/files/sample.pdf';
 
 const StyledButton = styled.button`
     position: relative;
@@ -51,7 +51,7 @@ const StyledButton = styled.button`
     }
     &::before,
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         right: 0;
         bottom: 0;
@@ -93,7 +93,7 @@ const DownloadCV = (props) => {
     const [state] = useState(props);
 
     return (
-        <StyledButton title="Download CV">
+        <StyledButton title="Download CV" className="hidden md:block">
             <a href={ExampleDoc} download="MyExampleDoc">
                 <span>
                     {state.text} <i className="ri-download-2-line"></i>

@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-import { useTranslation } from "react-i18next";
-// Ultis
-import SwitchLanguage from "../../utils/SwitchLanguage/SwitchLanguage";
-import ChangeTheme from "../../utils/ChangeTheme/ChangeTheme";
-import DownloadCV from "../../utils/DownloadCV/DownloadCV";
+import { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import SwitchLanguage from '../../utils/SwitchLanguage/SwitchLanguage';
+import ChangeTheme from '../../utils/ChangeTheme/ChangeTheme';
+import DownloadCV from '../../utils/DownloadCV/DownloadCV';
 
 const StyledHeader = styled.header`
     width: 100%;
@@ -24,7 +23,9 @@ const StyledHeader = styled.header`
     @media (min-width: 1023px) {
         top: 0;
         bottom: initial;
-        background-color: var(--body-color);
+        /* background-color: var(--body-color); */
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
         transform: 0.4s;
         translate: 0 -80px;
 
@@ -41,7 +42,8 @@ const StyledHeader = styled.header`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: var(--body-color);
+        background: none;
+        /* background-color: var(--body-color); */
         box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
         padding-inline: 1.5rem;
         border-radius: 3rem;
@@ -150,7 +152,8 @@ const StyledHeader = styled.header`
             @media (min-width: 1023px) {
                 width: initial;
                 margin: 0 auto;
-                background-color: var(--body-color);
+                /* background-color: var(--body-color); */
+                background: transparent;
                 transition: background 0.4s;
             }
         }
@@ -184,15 +187,15 @@ const Nav = () => {
     const [toggleNavShadow, setToggleNavShadow] = useState(false);
     const { t } = useTranslation();
 
-    const navMenu = document.getElementById("nav-menu");
-    const navLink = document.querySelectorAll(".nav__link");
+    const navMenu = document.getElementById('nav-menu');
+    const navLink = document.querySelectorAll('.nav__link');
 
     const lastScrollTop = useRef(0);
     const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
     const linkAction = () => {
-        navMenu.classList.remove("show-menu");
-        navLink.forEach((n) => n.addEventListener("click", linkAction));
+        navMenu.classList.remove('show-menu');
+        navLink.forEach((n) => n.addEventListener('click', linkAction));
     };
 
     const handleScroll = () => {
@@ -216,26 +219,26 @@ const Nav = () => {
 
     useEffect(() => {
         linkAction;
-        window.addEventListener("scroll", handleScrollShadow, {
+        window.addEventListener('scroll', handleScrollShadow, {
             passive: true,
         });
-        window.addEventListener("scroll", handleScroll, { passive: true });
-    }, []);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }, [linkAction]);
 
     return (
         <StyledHeader
-            className={`header ${isNavbarVisible ? "visible" : ""} ${
-                toggleNavShadow ? "" : "d-shadow"
+            className={`header backdrop-blur-lg ${
+                isNavbarVisible ? 'visible' : ''
             }`}
             id="header"
         >
             <nav className="nav container backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none">
                 <a href="#" className="nav__logo">
-                    {t("home.name")}
+                    {t('home.name')}
                 </a>
 
                 <div
-                    className={`nav__menu ${toggleMenu ? "show-menu" : ""}`}
+                    className={`nav__menu ${toggleMenu ? 'show-menu' : ''}`}
                     id="nav-menu"
                 >
                     <ul className="nav__list grid">
@@ -253,7 +256,7 @@ const Nav = () => {
 
                         <li className="nav__item">
                             <a href="#qualification" className="nav__link">
-                                <i className="ri-book-open-line"></i>{" "}
+                                <i className="ri-book-open-line"></i>{' '}
                                 Qualification
                             </a>
                         </li>
