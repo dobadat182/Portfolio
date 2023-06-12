@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 import projectImg1 from '../../assets/img/project1.jpg';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 const ProjectsStyled = styled.section`
+    padding: 0 20px;
+
     .projects {
         &__container {
             overflow: initial;
@@ -54,8 +57,79 @@ const Projects = () => {
 
             <div className="container section__border">
                 <div className="projects__container">
-                    <div className="carousel-wrapper">
-                        <div className="projects__content">
+                    <Splide
+                        options={{
+                            type: 'slide',
+                            perPage: 1,
+                            rewind: true,
+                            pagination: false,
+                            arrows: false,
+                            autoplay: true,
+                            fixedWidth: '90%',
+                            gap: '1.5rem',
+                            mediaQuery: 'min',
+                            breakpoints: {
+                                640: {
+                                    perPage: 4,
+                                    fixedWidth: false,
+                                },
+                            },
+                        }}
+                        className="carousel-wrapper"
+                        tag="div"
+                    >
+                        <SplideSlide className="projects__content">
+                            <img src={projectImg1} alt="projects image" />
+
+                            <div>
+                                <span className="projects__subtitle">
+                                    Animation
+                                </span>
+                                <h1 className="projects__title">
+                                    Animation Prototypes 1
+                                </h1>
+
+                                <a href="#" className="projects__button">
+                                    View <i className="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+                        </SplideSlide>
+
+                        <SplideSlide className="projects__content">
+                            <img src={projectImg1} alt="projects image" />
+
+                            <div>
+                                <span className="projects__subtitle">
+                                    Animation
+                                </span>
+                                <h1 className="projects__title">
+                                    Animation Prototypes 2
+                                </h1>
+
+                                <a href="#" className="projects__button">
+                                    View <i className="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+                        </SplideSlide>
+
+                        <SplideSlide className="projects__content">
+                            <img src={projectImg1} alt="projects image" />
+
+                            <div>
+                                <span className="projects__subtitle">
+                                    Animation
+                                </span>
+                                <h1 className="projects__title">
+                                    Animation Prototypes 3
+                                </h1>
+
+                                <a href="#" className="projects__button">
+                                    View <i className="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+                        </SplideSlide>
+
+                        <SplideSlide className="projects__content">
                             <img src={projectImg1} alt="projects image" />
 
                             <div>
@@ -70,59 +144,8 @@ const Projects = () => {
                                     View <i className="ri-arrow-right-line"></i>
                                 </a>
                             </div>
-                        </div>
-
-                        <div className="projects__content">
-                            <img src={projectImg1} alt="projects image" />
-
-                            <div>
-                                <span className="projects__subtitle">
-                                    Animation
-                                </span>
-                                <h1 className="projects__title">
-                                    Animation Prototypes
-                                </h1>
-
-                                <a href="#" className="projects__button">
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="projects__content">
-                            <img src={projectImg1} alt="projects image" />
-
-                            <div>
-                                <span className="projects__subtitle">
-                                    Animation
-                                </span>
-                                <h1 className="projects__title">
-                                    Animation Prototypes
-                                </h1>
-
-                                <a href="#" className="projects__button">
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="projects__content">
-                            <img src={projectImg1} alt="projects image" />
-
-                            <div>
-                                <span className="projects__subtitle">
-                                    Animation
-                                </span>
-                                <h1 className="projects__title">
-                                    Animation Prototypes
-                                </h1>
-
-                                <a href="#" className="projects__button">
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                        </SplideSlide>
+                    </Splide>
                 </div>
             </div>
         </ProjectsStyled>

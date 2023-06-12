@@ -24,7 +24,7 @@ const StyledHeader = styled.header`
         top: 0;
         bottom: initial;
         /* background-color: var(--body-color); */
-        background: rgba(255, 255, 255, 0.85);
+        /* background: rgba(255, 255, 255, 0.85); */
         backdrop-filter: blur(12px);
         transform: 0.4s;
         translate: 0 -80px;

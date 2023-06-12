@@ -3,6 +3,7 @@ import avatar from '../../assets/img/me.jpg';
 import shapeWawes from '../../assets/img/shape-wawes.svg';
 import shapeCircle from '../../assets/img/shape-circle.svg';
 import { useTranslation } from 'react-i18next';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 const HeroStyled = styled.div`
     @media (min-width: 1200px) {
@@ -13,11 +14,11 @@ const HeroStyled = styled.div`
         &__container {
             row-gap: 4rem;
             padding-top: 2rem;
-            padding-left: 20px;
-            padding-right: 20px;
 
             @media (min-width: 767px) {
                 grid-template-columns: 1fr 2fr 1fr;
+            }
+            @media (min-width: 1440px) {
                 padding-left: 0;
                 padding-right: 0;
             }
@@ -157,7 +158,7 @@ const HeroStyled = styled.div`
             }
 
             &-description {
-                padding-right: 4rem;
+                /* padding-right: 4rem; */
                 @media (min-width: 767px) {
                     padding-right: 0;
                 }
@@ -218,7 +219,8 @@ const Hero = () => {
                     </ul>
                 </div>
 
-                <div className="home__info">
+                {/* Desktop UI */}
+                <div className="home__info !hidden md:grid">
                     <div>
                         <h3 className="home__info-title">BIOGRAPHY</h3>
                         <p className="home__info-description">
@@ -247,7 +249,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="home__info">
+                <div className="home__info !hidden md:grid">
                     <div>
                         <h3 className="home__info-title">
                             YEARS OF EXPERIENCE
@@ -268,6 +270,89 @@ const Hero = () => {
                         <p className="home__info-number">01+</p>
                     </div>
                 </div>
+
+                {/* Mobile UI */}
+                <Splide
+                    options={{
+                        type: 'splide',
+                        perPage: 1,
+                        padding: '20%',
+                        focus: 'center',
+                        arrows: false,
+                        pagination: false,
+                        rewind: false,
+                        start: 1,
+                    }}
+                    className="home__info md:hidden"
+                >
+                    <SplideSlide className="flex flex-col items-center">
+                        <h3 className="home__info-title text-center">
+                            CONTACT
+                        </h3>
+                        <p className="home__info-description text-center">
+                            Ho Chi Minh <br />
+                            badat336@gmail.com <br />
+                        </p>
+                    </SplideSlide>
+
+                    <SplideSlide className="flex flex-col items-center">
+                        <h3 className="home__info-title text-center">
+                            BIOGRAPHY
+                        </h3>
+                        <p className="home__info-description text-center">
+                            Hi, I'm Dat, Frontend Developer. Passionate about
+                            designing beautiful web interfaces, Based in Ho Chi
+                            Minh city
+                        </p>
+                    </SplideSlide>
+
+                    <SplideSlide className="flex flex-col items-center">
+                        <h3 className="home__info-title text-center">
+                            SERVICES
+                        </h3>
+                        <p className="home__info-description text-center">
+                            Website Development <br />
+                            Animation <br />
+                            Wordpress <br />
+                            React
+                        </p>
+                    </SplideSlide>
+                </Splide>
+
+                <Splide
+                    options={{
+                        type: 'slide',
+                        perPage: 3,
+                        focus: 'center',
+                        arrows: false,
+                        pagination: false,
+                    }}
+                    className="home__info md:hidden"
+                >
+                    <SplideSlide className="flex flex-col items-center">
+                        <h3 className="home__info-title text-center">
+                            YEARS OF EXPERIENCE
+                        </h3>
+
+                        <p className="home__info-number">02+</p>
+                    </SplideSlide>
+
+                    <SplideSlide className="flex flex-col items-center">
+                        <h3 className="home__info-title text-center">
+                            COMPLETED PROJECTS
+                        </h3>
+
+                        <p className="home__info-number">24+</p>
+                    </SplideSlide>
+
+                    <SplideSlide className="flex flex-col items-center">
+                        <h3 className="home__info-title text-center">
+                            COMPANIES WORKED
+                        </h3>
+
+                        <p className="home__info-number">01+</p>
+                    </SplideSlide>
+                </Splide>
             </div>
         </HeroStyled>
     );

@@ -4,7 +4,7 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
-  
+
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(207, 65%, 65%);
@@ -17,10 +17,10 @@
   /* Change the first number */
   /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
   --gradient-color: linear-gradient(180deg,
-                      hsla(207, 48%, 72%, 0),
-                      hsla(207, 65%, 65%, 1));
-  --background-end-rgb: 255,255,255;
-  --background-start-rgb: 214,219,220;
+      hsla(207, 48%, 72%, 0),
+      hsla(207, 65%, 65%, 1));
+  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 214, 219, 220;
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: 'Roboto', sans-serif;
@@ -74,10 +74,13 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: background .4s; /* for dark mode animation */
+  transition: background .4s;
+  /* for dark mode animation */
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--title-color);
   font-family: var(--title-font);
   font-weight: var(--font-medium);
@@ -133,7 +136,7 @@ body.dark-theme {
   padding-bottom: 3.5rem;
 }
 
-.section__title, 
+.section__title,
 .section__subtitle {
   text-align: center;
 }
@@ -152,64 +155,10 @@ body.dark-theme {
 }
 
 .main {
-  overflow: hidden; /* For animation */
+  overflow: hidden;
+  /* For animation */
 }
 
-/*=============== HEADER & NAV ===============*/
-
-
-/* Show menu */
-
-
-/* Active link */
-
-
-/*=============== HOME ===============*/
-
-
-/*=============== SKILLS ===============*/
-
-
-/* Animation skills */
-
-
-/*=============== QUALIFICATION ===============*/
-
-
-/*=============== SERVICES ===============*/
-
-
-/*=============== PROJECTS ===============*/
-
-
-/* Swiper class */
-
-
-/*=============== TESTIMONIAL ===============*/
-
-
-/* Swiper class */
-
-
-/*=============== CONTACT ===============*/
-
-
-/* Status color */
-
-
-/*=============== FOOTER ===============*/
-
-
-/*=============== SCROLL BAR ===============*/
-
-
-/*=============== SCROLL UP ===============*/
-
-
-/* Show Scroll Up*/
-
-
-/*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
 
@@ -218,12 +167,13 @@ body.dark-theme {
 
 /* For large devices */
 @media (min-width: 1200px) {
-    .section__border {
-        padding-top: 6rem;
-    }
-    .section__subtitle {
-        margin-bottom: 5rem;
-    }
+  .section__border {
+    padding-top: 6rem;
+  }
+
+  .section__subtitle {
+    margin-bottom: 5rem;
+  }
 }
 
 
