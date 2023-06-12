@@ -157,6 +157,12 @@ const StyledHeader = styled.header`
                 transition: background 0.4s;
             }
         }
+
+        &__buttons {
+            display: flex;
+            align-items: center;
+            column-gap: 1.5rem;
+        }
     }
 
     .show-menu {
@@ -262,19 +268,19 @@ const Header = () => {
                         </li>
 
                         <li className="nav__item">
-                            <a href="#" className="nav__link">
+                            <a href="#services" className="nav__link">
                                 <i className="ri-briefcase-line"></i> Services
                             </a>
                         </li>
 
                         <li className="nav__item">
-                            <a href="#" className="nav__link">
+                            <a href="#projects" className="nav__link">
                                 <i className="ri-image-line"></i> Projects
                             </a>
                         </li>
 
                         <li className="nav__item">
-                            <a href="#" className="nav__link">
+                            <a href="#contact" className="nav__link">
                                 <i className="ri-chat-3-line"></i> Contact
                             </a>
                         </li>
