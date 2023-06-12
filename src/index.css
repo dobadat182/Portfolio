@@ -132,9 +132,11 @@ body.dark-theme {
 }
 
 .section__border {
-  border-bottom: 1px solid var(--title-color);
+  /* border-bottom: 1px solid var(--title-color); */
+  border-bottom: 1px solid rgb(226, 232, 240);
   padding-bottom: 3.5rem;
 }
+
 
 .section__title,
 .section__subtitle {
