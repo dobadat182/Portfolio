@@ -24,7 +24,7 @@ const StyledHeader = styled.header`
         top: 0;
         bottom: initial;
         /* background-color: var(--body-color); */
-        background: rgba(255, 255, 255, 0.85);
+        /* background: rgba(255, 255, 255, 0.85); */
         backdrop-filter: blur(12px);
         transform: 0.4s;
         translate: 0 -80px;
@@ -157,6 +157,12 @@ const StyledHeader = styled.header`
                 transition: background 0.4s;
             }
         }
+
+        &__buttons {
+            display: flex;
+            align-items: center;
+            column-gap: 1.5rem;
+        }
     }
 
     .show-menu {
@@ -262,19 +268,19 @@ const Header = () => {
                         </li>
 
                         <li className="nav__item">
-                            <a href="#" className="nav__link">
+                            <a href="#services" className="nav__link">
                                 <i className="ri-briefcase-line"></i> Services
                             </a>
                         </li>
 
                         <li className="nav__item">
-                            <a href="#" className="nav__link">
+                            <a href="#projects" className="nav__link">
                                 <i className="ri-image-line"></i> Projects
                             </a>
                         </li>
 
                         <li className="nav__item">
-                            <a href="#" className="nav__link">
+                            <a href="#contact" className="nav__link">
                                 <i className="ri-chat-3-line"></i> Contact
                             </a>
                         </li>

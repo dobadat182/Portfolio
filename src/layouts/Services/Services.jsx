@@ -1,19 +1,23 @@
 import styled from 'styled-components';
 
 const ServicesStyled = styled.section`
+    overflow: hidden;
+
     .services {
         &__container {
             row-gap: 2.5rem;
             justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
         }
         &__card {
             position: relative;
-            width: 228px;
+            /* width: 228px; */
             min-height: 322px;
             background-color: var(--container-color);
             text-align: center;
             padding: 3.5rem 1rem;
             border-radius: 7.25rem;
+            margin: 0 auto;
 
             &:hover {
                 i {
@@ -40,7 +44,7 @@ const ServicesStyled = styled.section`
         }
         &__border {
             width: 248px;
-            height: 342px;
+            height: calc(100% + 24px);
             border: 1.8px solid var(--text-color-light);
             border-radius: 7.75rem;
             position: absolute;
