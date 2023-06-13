@@ -19,6 +19,7 @@ const HeroStyled = styled.div`
             padding-top: 2rem;
 
             @media (min-width: 767px) {
+                padding: 0 20px;
                 grid-template-columns: 1fr 2fr 1fr;
             }
             @media (min-width: 1440px) {

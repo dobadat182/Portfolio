@@ -6,12 +6,16 @@ const ServicesStyled = styled.section`
     .services {
         &__container {
             row-gap: 2.5rem;
-            justify-content: center;
             grid-template-columns: repeat(2, 1fr);
+            @media (min-width: 768px) {
+                justify-content: center;
+                column-gap: 5rem;
+                grid-template-columns: repeat(2, max-content);
+            }
         }
         &__card {
             position: relative;
-            /* width: 228px; */
+            width: 228px;
             min-height: 322px;
             background-color: var(--container-color);
             text-align: center;
@@ -70,6 +74,38 @@ const Services = () => {
 
                     <h2 className="services__title">
                         UI/UX <br /> Designer
+                    </h2>
+
+                    <p className="services__description">
+                        Service that provides the best quality and at the
+                        request of the client, with professional work and
+                        customer support.
+                    </p>
+
+                    <div className="services__border"></div>
+                </div>
+
+                <div className="services__card">
+                    <i className="ri-code-line"></i>
+
+                    <h2 className="services__title">
+                        Website <br /> Designer
+                    </h2>
+
+                    <p className="services__description">
+                        Service that provides the best quality and at the
+                        request of the client, with professional work and
+                        customer support.
+                    </p>
+
+                    <div className="services__border"></div>
+                </div>
+
+                <div className="services__card">
+                    <i className="ri-code-line"></i>
+
+                    <h2 className="services__title">
+                        Website <br /> Designer
                     </h2>
 
                     <p className="services__description">
