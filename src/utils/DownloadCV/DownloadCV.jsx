@@ -26,6 +26,9 @@ const StyledButton = styled.button`
     span {
         font-size: var(--normal-font-size);
         color: var(--body-color);
+        i {
+            color: var(--text-color-light);
+        }
     }
 
     &:hover {

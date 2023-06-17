@@ -9,7 +9,7 @@ import shapeCircle from '../../assets/img/shape-circle.svg';
 import fireCute from '../../assets/lottie/fire-cute.gif';
 
 const HeroStyled = styled.div`
-    @media (min-width: 1200px) {
+    @media (min-width: 1023px) {
         margin-top: 70px;
     }
 
@@ -21,6 +21,9 @@ const HeroStyled = styled.div`
             @media (min-width: 767px) {
                 padding: 0 20px;
                 grid-template-columns: 1fr 2fr 1fr;
+            }
+            @media (min-width: 1200px) {
+                padding: 3rem 20px 6rem;
             }
             @media (min-width: 1440px) {
                 padding-left: 0;
@@ -41,7 +44,10 @@ const HeroStyled = styled.div`
             font-size: var(--biggest-font-size);
             letter-spacing: 0.3px;
             margin-bottom: 0.5rem;
-            @media (min-width: 1200px) {
+            @media (min-width: 1023px) {
+                font-size: 2.25rem;
+            }
+            @media (min-width: 1400px) {
                 font-size: var(--biggest-font-size);
             }
         }
@@ -203,7 +209,6 @@ const Hero = () => {
                         <div className="home__perfil">
                             <img src={avatar} alt="home perfil" />
                         </div>
-
                         <img
                             src={shapeWawes}
                             alt=""

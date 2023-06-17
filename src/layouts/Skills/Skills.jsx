@@ -24,6 +24,9 @@ const SkillStyled = styled.section`
                 grid-template-columns: repeat(2, max-content);
                 column-gap: 5rem;
             }
+            @media (min-width: 1200px) {
+                column-gap: 10rem;
+            }
         }
         &__title {
             display: flex;
@@ -33,6 +36,13 @@ const SkillStyled = styled.section`
             font-size: var(--small-font-size);
             font-weight: var(--font-semi-bold);
             margin-bottom: 2.5rem;
+
+            @media (min-width: 1200px) {
+                margin-bottom: 3rem;
+                i {
+                    font-size: 1.25rem;
+                }
+            }
 
             i {
                 font-size: 1rem;

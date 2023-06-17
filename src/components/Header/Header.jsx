@@ -10,9 +10,9 @@ const StyledHeader = styled.header`
     position: fixed;
     bottom: 1rem;
     box-shadow: 0 10px 20px rgba(0 0 0 / 10%);
-    background: transparent;
+    background: var(--body-color);
     transition: 300ms;
-    z-index: var(--z-fixed);
+    z-index: 10;
     padding: 0 1rem;
     box-shadow: none;
     translate: 0 64px;
@@ -23,9 +23,6 @@ const StyledHeader = styled.header`
     @media (min-width: 1023px) {
         top: 0;
         bottom: initial;
-        /* background-color: var(--body-color); */
-        /* background: rgba(255, 255, 255, 0.85); */
-        backdrop-filter: blur(12px);
         transform: 0.4s;
         translate: 0 -80px;
 
@@ -33,8 +30,8 @@ const StyledHeader = styled.header`
             top: 0;
             translate: 0;
         }
-        &.d-shadow {
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+        &.bg-header {
+            box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
         }
     }
     nav {
@@ -149,7 +146,7 @@ const StyledHeader = styled.header`
                 border-radius: 2rem;
                 transition: bottom 0.3s;
             }
-            @media (min-width: 1023px) {
+            @media (min-width: 1024px) {
                 width: initial;
                 margin: 0 auto;
                 /* background-color: var(--body-color); */
@@ -169,24 +166,6 @@ const StyledHeader = styled.header`
         bottom: 0rem;
     }
 `;
-
-// User reducer
-// const initialState = {
-//     dropShadow: false,
-//     toggleNav: false,
-// };
-
-// function reducer(state, action) {
-//     switch (action.type) {
-//         case "fetching":
-//             console.log("🚀 Fetching:");
-//             return { ...state, dropShadow: true };
-
-//         case "fetched":
-//             console.log("fetched");
-//             return { ...state, loading: false, comic: action.comic };
-//     }
-// }
 
 const Header = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -216,7 +195,7 @@ const Header = () => {
 
     const handleScrollShadow = () => {
         const { pageYOffset } = window;
-        if (pageYOffset === 0) {
+        if (pageYOffset >= 50) {
             setToggleNavShadow(true);
         } else {
             setToggleNavShadow(false);
@@ -233,12 +212,12 @@ const Header = () => {
 
     return (
         <StyledHeader
-            className={`header md:backdrop-blur-lg ${
-                isNavbarVisible ? 'visible' : ''
+            className={`header ${isNavbarVisible ? 'visible' : ''} ${
+                toggleNavShadow ? 'bg-header' : ''
             }`}
             id="header"
         >
-            <nav className="nav container backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none">
+            <nav className="nav container">
                 <a href="#" className="nav__logo">
                     {t('home.name')}
                 </a>

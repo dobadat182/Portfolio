@@ -4,6 +4,7 @@ import projectImg1 from '../../assets/img/project1.jpg';
 import safetypathProject from '../../assets/img/projects/safetypath.png';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { useState } from 'react';
 
 const ProjectsStyled = styled.section`
     .projects {
@@ -50,6 +51,8 @@ const ProjectsStyled = styled.section`
 `;
 
 const Projects = () => {
+    const [projects, setProjects] = useState(Array(9).fill('item'));
+
     return (
         <ProjectsStyled className="projects section" id="projects">
             <h2 className="section__title">Projects</h2>
@@ -78,73 +81,35 @@ const Projects = () => {
                         className="carousel-wrapper"
                         tag="div"
                     >
-                        <SplideSlide className="projects__content">
-                            <img
-                                className="projects__img"
-                                src={safetypathProject}
-                                alt="safetypath image"
-                            />
+                        {projects.map((item, index) => (
+                            <SplideSlide
+                                key={index}
+                                className="projects__content"
+                            >
+                                <img
+                                    className="projects__img"
+                                    src={safetypathProject}
+                                    alt="safetypath image"
+                                />
 
-                            <div>
-                                <span className="projects__subtitle">
-                                    Wordpress
-                                </span>
-                                <h1 className="projects__title">SafetyPath</h1>
+                                <div>
+                                    <span className="projects__subtitle">
+                                        Wordpress
+                                    </span>
+                                    <h1 className="projects__title">
+                                        SafetyPath
+                                    </h1>
 
-                                <a
-                                    href="https://safetypath.com/"
-                                    className="projects__button"
-                                >
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </SplideSlide>
-
-                        <SplideSlide className="projects__content">
-                            <img
-                                className="projects__img"
-                                src={safetypathProject}
-                                alt="safetypath image"
-                            />
-
-                            <div>
-                                <span className="projects__subtitle">
-                                    Wordpress
-                                </span>
-                                <h1 className="projects__title">
-                                    5 Phut Thuoc Bai
-                                </h1>
-
-                                <a
-                                    href="https://safetypath.com/"
-                                    className="projects__button"
-                                >
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </SplideSlide>
-
-                        <SplideSlide className="projects__content">
-                            <img
-                                className="projects__img"
-                                src={safetypathProject}
-                                alt="safetypath image"
-                            />
-
-                            <div>
-                                <span className="projects__subtitle">
-                                    Wordpress
-                                </span>
-                                <h1 className="projects__title">Bongiorno</h1>
-
-                                <a
-                                    href="https://safetypath.com/"
-                                    className="projects__button"
-                                >
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </SplideSlide>
+                                    <a
+                                        href="https://safetypath.com/"
+                                        className="projects__button"
+                                    >
+                                        View{' '}
+                                        <i className="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </SplideSlide>
+                        ))}
 
                         {/* 5 Phut Thuoc Bai, Safety Path, Bongiorno, Athletics Victoria, Reveal Group, Luxy Nails, Danh Gia, Lacoste, Phuong Phat, Integral Lighting */}
                     </Splide>
