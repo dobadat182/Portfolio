@@ -16,7 +16,6 @@ const StyledHeader = styled.header`
     padding: 0 1rem;
     box-shadow: none;
     translate: 0 64px;
-    margin: 0 20px;
 
     &.visible {
         translate: 0;
