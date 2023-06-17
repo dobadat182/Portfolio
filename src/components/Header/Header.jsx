@@ -16,6 +16,7 @@ const StyledHeader = styled.header`
     padding: 0 1rem;
     box-shadow: none;
     translate: 0 64px;
+    margin: 0 20px;
 
     &.visible {
         translate: 0;
@@ -42,8 +43,9 @@ const StyledHeader = styled.header`
         background: none;
         /* background-color: var(--body-color); */
         box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
-        padding-inline: 1.5rem;
+        /* padding-inline: 1.5rem; */
         border-radius: 3rem;
+        margin: 0 auto;
     }
 
     .nav {
