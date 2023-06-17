@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
@@ -219,7 +220,7 @@ const Header = () => {
             id="header"
         >
             <nav className="nav container">
-                <a href="#" className="nav__logo">
+                <a href="/" className="nav__logo">
                     {t('home.name')}
                 </a>
 
@@ -266,13 +267,13 @@ const Header = () => {
                         </li>
                     </ul>
 
-                    <div
+                    <button
                         className="nav__close"
                         id="nav-close"
                         onClick={() => setToggleMenu(!toggleMenu)}
                     >
                         <i className="ri-close-line"></i>
-                    </div>
+                    </button>
                 </div>
 
                 <div className="nav__buttons gap-3 flex">
@@ -280,13 +281,13 @@ const Header = () => {
                     <SwitchLanguage />
                     <DownloadCV />
 
-                    <div
+                    <button
                         className="nav__toggle"
                         id="nav-toggle"
                         onClick={() => setToggleMenu(!toggleMenu)}
                     >
                         <i className="ri-menu-4-line"></i>
-                    </div>
+                    </button>
                 </div>
             </nav>
         </StyledHeader>
