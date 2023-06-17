@@ -1,12 +1,15 @@
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+
 import avatar from '../../assets/img/me.jpg';
 import shapeWawes from '../../assets/img/shape-wawes.svg';
 import shapeCircle from '../../assets/img/shape-circle.svg';
-import { useTranslation } from 'react-i18next';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import fireCute from '../../assets/lottie/fire-cute.gif';
 
 const HeroStyled = styled.div`
-    @media (min-width: 1200px) {
+    @media (min-width: 1023px) {
         margin-top: 70px;
     }
 
@@ -16,7 +19,11 @@ const HeroStyled = styled.div`
             padding-top: 2rem;
 
             @media (min-width: 767px) {
+                padding: 0 20px;
                 grid-template-columns: 1fr 2fr 1fr;
+            }
+            @media (min-width: 1200px) {
+                padding: 3rem 20px 6rem;
             }
             @media (min-width: 1440px) {
                 padding-left: 0;
@@ -37,7 +44,10 @@ const HeroStyled = styled.div`
             font-size: var(--biggest-font-size);
             letter-spacing: 0.3px;
             margin-bottom: 0.5rem;
-            @media (min-width: 1200px) {
+            @media (min-width: 1023px) {
+                font-size: 2.25rem;
+            }
+            @media (min-width: 1400px) {
                 font-size: var(--biggest-font-size);
             }
         }
@@ -130,8 +140,8 @@ const HeroStyled = styled.div`
         }
         &__info {
             display: grid;
-            row-gap: 2rem;
             @media (min-width: 767px) {
+                row-gap: 2rem;
                 margin-top: 10rem;
                 &:nth-child(3) {
                     order: 3;
@@ -169,6 +179,17 @@ const HeroStyled = styled.div`
             }
         }
     }
+
+    .splide {
+        &__arrows {
+            gap: 1rem;
+        }
+        &__arrow {
+            background: none;
+            position: unset;
+            transform: translateY(0);
+        }
+    }
 `;
 
 const Hero = () => {
@@ -188,7 +209,6 @@ const Hero = () => {
                         <div className="home__perfil">
                             <img src={avatar} alt="home perfil" />
                         </div>
-
                         <img
                             src={shapeWawes}
                             alt=""
@@ -220,7 +240,7 @@ const Hero = () => {
                 </div>
 
                 {/* Desktop UI */}
-                <div className="home__info !hidden md:grid">
+                <div className="home__info !hidden md:!grid">
                     <div>
                         <h3 className="home__info-title">BIOGRAPHY</h3>
                         <p className="home__info-description">
@@ -249,7 +269,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="home__info !hidden md:grid">
+                <div className="home__info !hidden md:!grid">
                     <div>
                         <h3 className="home__info-title">
                             YEARS OF EXPERIENCE
@@ -283,7 +303,7 @@ const Hero = () => {
                         rewind: false,
                         start: 1,
                     }}
-                    className="home__info md:hidden"
+                    className="home__info md:!hidden"
                 >
                     <SplideSlide className="flex flex-col items-center">
                         <h3 className="home__info-title text-center">
@@ -320,38 +340,68 @@ const Hero = () => {
                 </Splide>
 
                 <Splide
+                    id="home-splide-info-2"
+                    hasTrack={false}
+                    extensions={{ AutoScroll }}
                     options={{
-                        type: 'slide',
+                        type: 'loop',
                         perPage: 3,
                         focus: 'center',
                         arrows: false,
                         pagination: false,
+                        padding: 10,
+                        drag: 'free',
+                        autoScroll: {
+                            speed: 1,
+                        },
+                        breakpoints: {
+                            425: {
+                                focus: false,
+                                perPage: 2,
+                                arrows: false,
+                            },
+                        },
                     }}
-                    className="home__info md:hidden"
+                    className="home__info md:!hidden"
                 >
-                    <SplideSlide className="flex flex-col items-center">
-                        <h3 className="home__info-title text-center">
-                            YEARS OF EXPERIENCE
-                        </h3>
+                    <SplideTrack>
+                        <SplideSlide className="flex flex-col items-center">
+                            <h3 className="home__info-title text-center">
+                                YEARS OF EXPERIENCE
+                            </h3>
 
-                        <p className="home__info-number">02+</p>
-                    </SplideSlide>
+                            <p className="home__info-number">02+</p>
+                        </SplideSlide>
 
-                    <SplideSlide className="flex flex-col items-center">
-                        <h3 className="home__info-title text-center">
-                            COMPLETED PROJECTS
-                        </h3>
+                        <SplideSlide className="flex flex-col items-center">
+                            <h3 className="home__info-title text-center">
+                                COMPLETED PROJECTS
+                            </h3>
 
-                        <p className="home__info-number">24+</p>
-                    </SplideSlide>
+                            <p className="home__info-number">24+</p>
+                        </SplideSlide>
 
-                    <SplideSlide className="flex flex-col items-center">
-                        <h3 className="home__info-title text-center">
-                            COMPANIES WORKED
-                        </h3>
+                        <SplideSlide className="flex flex-col items-center">
+                            <h3 className="home__info-title text-center">
+                                COMPANIES WORKED
+                            </h3>
 
-                        <p className="home__info-number">01+</p>
-                    </SplideSlide>
+                            <p className="home__info-number">01+</p>
+                        </SplideSlide>
+                    </SplideTrack>
+
+                    {/* <div className="splide__arrows flex justify-center items-center mt-2">
+                        <button className="splide__arrow splide__arrow--prev">
+                            <i className="ri-arrow-left-s-line"></i>
+                        </button>
+                        <button className="splide__arrow splide__arrow--next">
+                            <i className="ri-arrow-right-s-line"></i>
+                        </button>
+                    </div> */}
+
+                    <div className="flex justify-center mt-10">
+                        <img src={fireCute} alt="fire cute" />
+                    </div>
                 </Splide>
             </div>
         </HeroStyled>

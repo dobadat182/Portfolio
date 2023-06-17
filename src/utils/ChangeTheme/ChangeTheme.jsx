@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 const ChangeThemeStyle = styled.div`
     .change-theme {
-        font-size: 1.25rem;
-        color: var(--title-color);
+        font-size: 1rem;
         cursor: pointer;
         transition: color 0.3s;
 

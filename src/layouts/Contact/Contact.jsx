@@ -5,6 +5,11 @@ const ContactStyled = styled.section`
     .contact {
         &__container {
             row-gap: 3.5rem;
+            @media (min-width: 768px) {
+                justify-content: center;
+                column-gap: 8rem;
+                grid-template-columns: repeat(2, max-content);
+            }
         }
         &__title {
             display: flex;
@@ -65,7 +70,9 @@ const ContactStyled = styled.section`
         &__form {
             position: relative;
             row-gap: 2rem;
-
+            @media (min-width: 768px) {
+                width: 360px;
+            }
             &-div {
                 position: relative;
                 height: 4rem;

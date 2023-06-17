@@ -8,10 +8,14 @@ const QualificationStyled = styled.section`
     .qualification {
         &__container {
             row-gap: 3.5rem;
+            @media (min-width: 768px) {
+                justify-content: center;
+                column-gap: 10rem;
+                grid-template-columns: repeat(2, max-content);
+            }
         }
         &__title {
             display: flex;
-            justify-content: center;
             align-items: center;
             column-gap: 0.5rem;
             font-size: var(--small-font-size);

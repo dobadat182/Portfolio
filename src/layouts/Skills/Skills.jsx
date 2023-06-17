@@ -19,6 +19,14 @@ const SkillStyled = styled.section`
     .skills {
         &__container {
             row-gap: 3.5rem;
+            @media (min-width: 768px) {
+                justify-content: center;
+                grid-template-columns: repeat(2, max-content);
+                column-gap: 5rem;
+            }
+            @media (min-width: 1200px) {
+                column-gap: 10rem;
+            }
         }
         &__title {
             display: flex;
@@ -28,6 +36,13 @@ const SkillStyled = styled.section`
             font-size: var(--small-font-size);
             font-weight: var(--font-semi-bold);
             margin-bottom: 2.5rem;
+
+            @media (min-width: 1200px) {
+                margin-bottom: 3rem;
+                i {
+                    font-size: 1.25rem;
+                }
+            }
 
             i {
                 font-size: 1rem;
@@ -43,6 +58,9 @@ const SkillStyled = styled.section`
         &__info {
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem 2rem;
+            @media (max-width: 380px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         &__data {
@@ -76,6 +94,11 @@ const SkillStyled = styled.section`
         &__subtitle {
             font-size: var(--tiny-font-size);
             color: var(--text-color-light);
+        }
+        &__content {
+            &:nth-child(3) {
+                grid-area: 2 / 1 / 3 / 3;
+            }
         }
     }
 
@@ -244,30 +267,13 @@ const Skills = () => {
                             <h3 className="skills__name">Github</h3>
                             <span className="skills__subtitle">Basic</span>
                         </div>
-                    </div>
-                </div>
 
-                {/* Skill 3 */}
-                <div className="skills__content">
-                    <h3 className="skills__title">
-                        <i className="ri-quill-pen-fill"></i> CMS
-                    </h3>
-                    <div className="skills__info">
                         <div className="skills__data">
                             <div className="skills__blob">
                                 <img src={skillWordpress} alt="skills image" />
                             </div>
 
                             <h3 className="skills__name">Wordpress</h3>
-                            <span className="skills__subtitle">Advanced</span>
-                        </div>
-
-                        <div className="skills__data">
-                            <div className="skills__blob">
-                                <img src={skillPs4} alt="skills image" />
-                            </div>
-
-                            <h3 className="skills__name">Playstation</h3>
                             <span className="skills__subtitle">Advanced</span>
                         </div>
                     </div>

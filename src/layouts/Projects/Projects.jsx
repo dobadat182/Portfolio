@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 import projectImg1 from '../../assets/img/project1.jpg';
+import safetypathProject from '../../assets/img/projects/safetypath.png';
+
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { useState } from 'react';
 
 const ProjectsStyled = styled.section`
-    padding: 0 20px;
-
     .projects {
         &__container {
             overflow: initial;
@@ -15,7 +16,7 @@ const ProjectsStyled = styled.section`
             justify-content: center;
         }
         &__img {
-            width: 250px;
+            /* width: 250px; */
             border-radius: 0.75rem;
             margin-bottom: 1.25rem;
         }
@@ -50,6 +51,8 @@ const ProjectsStyled = styled.section`
 `;
 
 const Projects = () => {
+    const [projects, setProjects] = useState(Array(9).fill('item'));
+
     return (
         <ProjectsStyled className="projects section" id="projects">
             <h2 className="section__title">Projects</h2>
@@ -64,9 +67,9 @@ const Projects = () => {
                             rewind: true,
                             pagination: false,
                             arrows: false,
-                            autoplay: true,
                             fixedWidth: '90%',
                             gap: '1.5rem',
+                            padding: 20,
                             mediaQuery: 'min',
                             breakpoints: {
                                 640: {
@@ -78,73 +81,37 @@ const Projects = () => {
                         className="carousel-wrapper"
                         tag="div"
                     >
-                        <SplideSlide className="projects__content">
-                            <img src={projectImg1} alt="projects image" />
+                        {projects.map((item, index) => (
+                            <SplideSlide
+                                key={index}
+                                className="projects__content"
+                            >
+                                <img
+                                    className="projects__img"
+                                    src={safetypathProject}
+                                    alt="safetypath image"
+                                />
 
-                            <div>
-                                <span className="projects__subtitle">
-                                    Animation
-                                </span>
-                                <h1 className="projects__title">
-                                    Animation Prototypes 1
-                                </h1>
+                                <div>
+                                    <span className="projects__subtitle">
+                                        Wordpress
+                                    </span>
+                                    <h1 className="projects__title">
+                                        SafetyPath
+                                    </h1>
 
-                                <a href="#" className="projects__button">
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </SplideSlide>
+                                    <a
+                                        href="https://safetypath.com/"
+                                        className="projects__button"
+                                    >
+                                        View{' '}
+                                        <i className="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </SplideSlide>
+                        ))}
 
-                        <SplideSlide className="projects__content">
-                            <img src={projectImg1} alt="projects image" />
-
-                            <div>
-                                <span className="projects__subtitle">
-                                    Animation
-                                </span>
-                                <h1 className="projects__title">
-                                    Animation Prototypes 2
-                                </h1>
-
-                                <a href="#" className="projects__button">
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </SplideSlide>
-
-                        <SplideSlide className="projects__content">
-                            <img src={projectImg1} alt="projects image" />
-
-                            <div>
-                                <span className="projects__subtitle">
-                                    Animation
-                                </span>
-                                <h1 className="projects__title">
-                                    Animation Prototypes 3
-                                </h1>
-
-                                <a href="#" className="projects__button">
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </SplideSlide>
-
-                        <SplideSlide className="projects__content">
-                            <img src={projectImg1} alt="projects image" />
-
-                            <div>
-                                <span className="projects__subtitle">
-                                    Animation
-                                </span>
-                                <h1 className="projects__title">
-                                    Animation Prototypes
-                                </h1>
-
-                                <a href="#" className="projects__button">
-                                    View <i className="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
-                        </SplideSlide>
+                        {/* 5 Phut Thuoc Bai, Safety Path, Bongiorno, Athletics Victoria, Reveal Group, Luxy Nails, Danh Gia, Lacoste, Phuong Phat, Integral Lighting */}
                     </Splide>
                 </div>
             </div>
