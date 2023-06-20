@@ -223,14 +223,14 @@ const Hero = () => {
 
                     <ul className="home__social order-2 md:-order-none">
                         <a
-                            href="#"
+                            href="/"
                             target="_blank"
                             className="home__social-link"
                         >
                             <i className="ri-linkedin-box-line"></i>
                         </a>
                         <a
-                            href="#"
+                            href="/"
                             target="_blank"
                             className="home__social-link"
                         >
@@ -400,7 +400,11 @@ const Hero = () => {
                     </div> */}
 
                     <div className="flex justify-center mt-10">
-                        <img src={fireCute} alt="fire cute" />
+                        <iframe
+                            className="w-40"
+                            title="frame"
+                            src="https://embed.lottiefiles.com/animation/16773"
+                        />
                     </div>
                 </Splide>
             </div>

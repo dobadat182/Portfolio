@@ -5,6 +5,7 @@ const ContactStyled = styled.section`
     .contact {
         &__container {
             row-gap: 3.5rem;
+            padding: 0 20px;
             @media (min-width: 768px) {
                 justify-content: center;
                 column-gap: 8rem;
@@ -151,6 +152,7 @@ const Contact = () => {
                                 href="mailto:badat336@gmail.com"
                                 className="contact__button"
                                 target="_blank"
+                                rel="noreferrer"
                             >
                                 Write me <i className="ri-arrow-right-line"></i>
                             </a>
@@ -169,6 +171,7 @@ const Contact = () => {
                                 href="https://www.linkedin.com/in/badat182/"
                                 className="contact__button"
                                 target="_blank"
+                                rel="noreferrer"
                             >
                                 View Profile
                                 <i className="ri-arrow-right-line"></i>
