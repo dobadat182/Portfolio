@@ -7,7 +7,6 @@ import avatar from '../../assets/img/me.jpg';
 import shapeWawes from '../../assets/img/shape-wawes.svg';
 import shapeCircle from '../../assets/img/shape-circle.svg';
 import CountUp from 'react-countup';
-import { TypeAnimation } from 'react-type-animation';
 
 const HeroStyled = styled.div`
     @media (min-width: 1023px) {
