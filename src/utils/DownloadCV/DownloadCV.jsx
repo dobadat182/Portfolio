@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import ExampleDoc from '../../assets/files/sample.pdf';
 
-const StyledButton = styled.button`
+const StyledButton = styled.a`
     position: relative;
     margin: 0;
     padding: 0.3rem 2rem;
@@ -34,7 +34,6 @@ const StyledButton = styled.button`
     &:hover {
         animation: sh0 0.5s ease-in-out both;
         span {
-            animation: storm 0.7s ease-in-out both;
             animation-delay: 0.06s;
         }
         &::before,
@@ -95,12 +94,15 @@ const DownloadCV = (props) => {
     const [state] = useState(props);
 
     return (
-        <StyledButton title="Download CV" className="hidden md:flex">
-            <a href={ExampleDoc} download="MyExampleDoc">
-                <span>
-                    {state.text} <i className="ri-download-2-line"></i>
-                </span>
-            </a>
+        <StyledButton
+            title="Download CV"
+            className="hidden md:flex"
+            href={ExampleDoc}
+            download="MyExampleDoc"
+        >
+            <span>
+                {state.text} <i className="ri-download-2-line"></i>
+            </span>
         </StyledButton>
     );
 };

@@ -6,7 +6,8 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import avatar from '../../assets/img/me.jpg';
 import shapeWawes from '../../assets/img/shape-wawes.svg';
 import shapeCircle from '../../assets/img/shape-circle.svg';
-import fireCute from '../../assets/lottie/fire-cute.gif';
+import CountUp from 'react-countup';
+import { TypeAnimation } from 'react-type-animation';
 
 const HeroStyled = styled.div`
     @media (min-width: 1023px) {
@@ -275,19 +276,25 @@ const Hero = () => {
                             YEARS OF EXPERIENCE
                         </h3>
 
-                        <p className="home__info-number">02+</p>
+                        <div className="home__info-number">
+                            <CountUp end={2} prefix="0" />+
+                        </div>
                     </div>
 
                     <div>
                         <h3 className="home__info-title">COMPLETED PROJECTS</h3>
 
-                        <p className="home__info-number">24+</p>
+                        <p className="home__info-number">
+                            <CountUp end={24} delay={1.5} />+
+                        </p>
                     </div>
 
                     <div>
                         <h3 className="home__info-title">COMPANIES WORKED</h3>
 
-                        <p className="home__info-number">01+</p>
+                        <p className="home__info-number">
+                            <CountUp end={1} prefix="0" delay={2.5} />+
+                        </p>
                     </div>
                 </div>
 
@@ -389,15 +396,6 @@ const Hero = () => {
                             <p className="home__info-number">01+</p>
                         </SplideSlide>
                     </SplideTrack>
-
-                    {/* <div className="splide__arrows flex justify-center items-center mt-2">
-                        <button className="splide__arrow splide__arrow--prev">
-                            <i className="ri-arrow-left-s-line"></i>
-                        </button>
-                        <button className="splide__arrow splide__arrow--next">
-                            <i className="ri-arrow-right-s-line"></i>
-                        </button>
-                    </div> */}
 
                     <div className="flex justify-center mt-10">
                         <iframe

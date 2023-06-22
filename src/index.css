@@ -13,6 +13,7 @@
   --text-color-light: hsl(207, 4%, 56%);
   --body-color: hsl(207, 4%, 99%);
   --container-color: hsl(207, 4%, 95%);
+  --bg-button: rgb(51, 51, 51);
 
   /* Change the first number */
   /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
@@ -108,6 +109,9 @@ body.dark-theme {
   --text-color: hsl(207, 4%, 65%);
   --body-color: hsl(207, 4%, 10%);
   --container-color: hsl(207, 4%, 12%);
+  --bg-button: rgb(47, 50, 52);
+  ;
+
 }
 
 body.dark-theme .bg-header {

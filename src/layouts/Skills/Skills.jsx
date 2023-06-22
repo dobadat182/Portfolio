@@ -126,10 +126,10 @@ const SkillStyled = styled.section`
 
 const Skills = () => {
     return (
-        <SkillStyled className="skills section" id="skills">
+        <SkillStyled className="skills section section__border" id="skills">
             <h2 className="section__title">Skills</h2>
             <span className="section__subtitle">My favorite skills</span>
-            <div className="skills__container container grid section__border">
+            <div className="skills__container container grid">
                 {/* Skill 1 */}
                 <div className="skills__content">
                     <h3 className="skills__title">
@@ -139,88 +139,66 @@ const Skills = () => {
                     <div className="skills__info">
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillHtml} alt="skills image" />
+                                <img src={skillHtml} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">HTML</h3>
-                            <span className="skills__subtitle">
-                                Intermediate
-                            </span>
                         </div>
 
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillCss} alt="skills image" />
+                                <img src={skillCss} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">CSS</h3>
-                            <span className="skills__subtitle">Advanced</span>
                         </div>
 
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillSass} alt="skills image" />
+                                <img src={skillSass} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">SCSS</h3>
-                            <span className="skills__subtitle">
-                                Intermediate
-                            </span>
                         </div>
 
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillJs} alt="skills image" />
+                                <img src={skillJs} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">JavaScript</h3>
-                            <span className="skills__subtitle">
-                                Intermediate
-                            </span>
                         </div>
 
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillJquery} alt="skills image" />
+                                <img src={skillJquery} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">Jquey</h3>
-                            <span className="skills__subtitle">
-                                Intermediate
-                            </span>
                         </div>
 
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillPhp} alt="skills image" />
+                                <img src={skillPhp} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">PHP</h3>
-                            <span className="skills__subtitle">
-                                Intermediate
-                            </span>
                         </div>
 
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillReact} alt="skills image" />
+                                <img src={skillReact} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">React</h3>
-                            <span className="skills__subtitle">
-                                Intermediate
-                            </span>
                         </div>
 
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillGit} alt="skills image" />
+                                <img src={skillGit} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">Git</h3>
-                            <span className="skills__subtitle">
-                                Intermediate
-                            </span>
                         </div>
                     </div>
                 </div>
@@ -234,47 +212,45 @@ const Skills = () => {
                     <div className="skills__info">
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillFigma} alt="skills image" />
+                                <img src={skillFigma} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">Figma</h3>
-                            <span className="skills__subtitle">
-                                Intermediate
-                            </span>
                         </div>
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillDocker} alt="skills image" />
+                                <img src={skillDocker} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">Docker</h3>
-                            <span className="skills__subtitle">Basic</span>
                         </div>
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillBitbucket} alt="skills image" />
+                                <img src={skillBitbucket} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">Bitbucket</h3>
-                            <span className="skills__subtitle">Basic</span>
                         </div>
-
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillGithub} alt="skills image" />
+                                <img src={skillGithub} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">Github</h3>
-                            <span className="skills__subtitle">Basic</span>
                         </div>
-
                         <div className="skills__data">
                             <div className="skills__blob">
-                                <img src={skillWordpress} alt="skills image" />
+                                <img src={skillWordpress} alt="skills" />
                             </div>
 
                             <h3 className="skills__name">Wordpress</h3>
-                            <span className="skills__subtitle">Advanced</span>
+                        </div>
+                        <div className="skills__data">
+                            <div className="skills__blob">
+                                <img src={skillPs4} alt="skills" />
+                            </div>
+
+                            <h3 className="skills__name">...</h3>
                         </div>
                     </div>
                 </div>

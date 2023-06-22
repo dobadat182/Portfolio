@@ -29,7 +29,7 @@ const ContactStyled = styled.section`
 
         &__info,
         &__data,
-        &__form {
+        &__htmlForm {
             display: grid;
         }
 
@@ -60,15 +60,15 @@ const ContactStyled = styled.section`
 
             i {
                 font-size: 1rem;
-                transition: transform 0.3s;
+                transition: transition 0.3s;
             }
 
             &:hover i {
-                transform: translateX(0.25rem);
+                transition: translateX(0.25rem);
             }
         }
 
-        &__form {
+        &__htmlForm {
             position: relative;
             row-gap: 2rem;
             @media (min-width: 768px) {
@@ -130,110 +130,175 @@ const ContactStyled = styled.section`
     }
 `;
 
+const SubmitButtonStyle = styled.button`
+    position: relative;
+    margin: 0;
+    padding: 0.5rem 2rem;
+    outline: none;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    background-color: var(--bg-button);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+    font-family: inherit;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+    width: 100%;
+
+    span {
+        font-size: var(--normal-font-size);
+        font-weight: var(--font-medium);
+        color: var(--body-color);
+        letter-spacing: 1px;
+        i {
+            color: var(--text-color-light);
+        }
+    }
+
+    &:hover {
+        animation: sh0 0.5s ease-in-out both;
+        span {
+            animation: storm 0.7s ease-in-out both;
+            animation-delay: 0.06s;
+        }
+        &::before,
+        &::after {
+            opacity: 0.15;
+            transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1),
+                opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+        }
+
+        &::before {
+            transform: translate3d(50%, 0, 0) scale(0.9);
+        }
+        &::after {
+            transform: translate(50%, 0) scale(1.1);
+        }
+    }
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0;
+        transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+            opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+        z-index: -1;
+        transform: translate(100%, -25%) translate3d(0, 0, 0);
+    }
+
+    @keyframes sh0 {
+        0% {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+
+        25% {
+            transform: rotate(1deg) translate3d(0, 0, 0);
+        }
+
+        50% {
+            transform: rotate(-0.5deg) translate3d(0, 0, 0);
+        }
+
+        75% {
+            transform: rotate(1deg) translate3d(0, 0, 0);
+        }
+
+        100% {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+    }
+`;
+
+const NewContactStyle = styled.section`
+    .contact {
+        &__description {
+        }
+    }
+
+    input {
+        font-size: var(--normal-font-size);
+        font-family: var(--title-font);
+    }
+`;
+
 const Contact = () => {
     return (
-        <ContactStyled className="contact section" id="contact">
-            <h2 className="section__title">Contact Me</h2>
-            <span className="section__subtitle">Get in touch</span>
-
-            <div className="contact__container container grid section__border">
-                <div className="contact__content">
-                    <h3 className="contact__title">
-                        <i className="ri-chat-3-"></i> Talk to me
-                    </h3>
-
-                    <div className="contact__info">
-                        <div className="contact__data">
-                            <span className="contact__data-title">Email</span>
-                            <span className="contact__data-info">
-                                badat336@gmail.com
-                            </span>
-                            <a
-                                href="mailto:badat336@gmail.com"
-                                className="contact__button"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Write me <i className="ri-arrow-right-line"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div className="contact__info">
-                        <div className="contact__data">
-                            <span className="contact__data-title">
-                                Linkedin&nbsp;
-                            </span>
-                            <span className="contact__data-info">
-                                Do Ba Dat
-                            </span>
-                            <a
-                                href="https://www.linkedin.com/in/badat182/"
-                                className="contact__button"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                View Profile
-                                <i className="ri-arrow-right-line"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="contact__content">
-                    <h3 className="contact__title">
-                        <i className="ri-send-plane-line"></i> Write me your
-                        project
-                    </h3>
-                    <form action="" className="contact__form" id="contact-form">
-                        <div className="contact__form-div">
-                            <label htmlFor="" className="contact__form-tag">
-                                Names
-                            </label>
+        <div className="container mx-auto">
+            <section className="mb-32 text-center">
+                <div className="mx-auto max-w-[700px] md:px-3">
+                    <h2 className="mb-12 text-3xl font-bold">Contact me</h2>
+                    <form>
+                        <div
+                            className="relative mb-6"
+                            data-te-input-wrapper-init
+                        >
                             <input
                                 type="text"
-                                name="user_name"
-                                required
-                                placeholder="Write your names"
-                                id="contact-name"
-                                className="contact__form-input"
+                                className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                id="exampleInput90"
+                                placeholder="Name"
                             />
-                        </div>
-
-                        <div className="contact__form-div">
-                            <label htmlFor="" className="contact__form-tag">
-                                Email
+                            <label
+                                className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ddark:peer-focus:text-primary"
+                                htmlFor="exampleInput90"
+                            >
+                                Name
                             </label>
+                        </div>
+                        <div
+                            className="relative mb-6"
+                            data-te-input-wrapper-init
+                        >
                             <input
-                                type="text"
-                                name="user_name"
-                                required
-                                placeholder="Write your email"
-                                id="contact-email"
-                                className="contact__form-input"
+                                type="email"
+                                className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                id="exampleInput91"
+                                placeholder="Email address"
                             />
-                        </div>
-
-                        <div className="contact__form-div contact__form-area">
-                            <label htmlFor="" className="contact__form-tag">
-                                Project
+                            <label
+                                className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ddark:peer-focus:text-primary"
+                                htmlFor="exampleInput91"
+                            >
+                                Email address
                             </label>
-
+                        </div>
+                        <div
+                            className="relative mb-6"
+                            data-te-input-wrapper-init
+                        >
                             <textarea
-                                name="user_project"
-                                placeholder="Write your project"
-                                className="contact__form-input"
-                                id="contact-project"
+                                className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                id="exampleFormControlTextarea1"
+                                rows="3"
+                                placeholder="Your message"
                             ></textarea>
+                            <label
+                                htmlFor="exampleFormControlTextarea1"
+                                className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ddark:peer-focus:text-primary"
+                            >
+                                Message
+                            </label>
                         </div>
-
-                        <button className="contact__button" type="submit">
-                            Submit <i className="ri-arrow-right-up-line"></i>
-                        </button>
+                        <SubmitButtonStyle>
+                            <span>Submit</span>
+                        </SubmitButtonStyle>
                     </form>
                 </div>
-            </div>
-        </ContactStyled>
+            </section>
+        </div>
     );
 };
 

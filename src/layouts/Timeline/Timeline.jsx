@@ -15,13 +15,15 @@ const TimelineStyle = styled.section`
             font-weight: var(--font-semi-bold);
         }
         &-description {
+            font-family: var(--title-font);
+            color: var(--title-color);
         }
     }
 `;
 
 const Timeline = () => {
     return (
-        <TimelineStyle>
+        <TimelineStyle id="timeline">
             <h2 className="section__title">Timeline</h2>
             <span className="section__subtitle">Experience & education</span>
 
@@ -50,28 +52,31 @@ const Timeline = () => {
                     {/* Item 1 */}
                     <SplideSlide>
                         <a
-                            href="#"
-                            className="flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 h-44"
+                            href="https://caodang.fpt.edu.vn/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 min-h-36"
                         >
-                            <div className="card-image w-1/3 p-3">
+                            <div className="card-image w-1/3 p-3 max-w-[150px]">
                                 <img
                                     className="object-contain"
                                     src={fpoly}
                                     alt=""
                                 />
                             </div>
-                            <div className="flex flex-col justify-between p-4 leading-normal">
-                                <span className="card-time text-sm text-gray-500 dark:text-gray-400">
+                            <div className="flex flex-col p-4 leading-normal w-full h-full">
+                                <span className="card-time text-xs text-gray-500 dark:text-gray-400 mb-3">
                                     2019 - FPT Polytechnic College
                                 </span>
-                                <h5 className="mb-2 card-title flex items-center">
+                                <h5 className="card-title flex items-center">
                                     Student
                                 </h5>
-                                <p className="mb-3 card-description">
-                                    Start learning the basics of programming &
-                                    UI/UX
+                                <p className="card-description">
+                                    Investing time and effort into learning
+                                    programming and UI/UX to enhance skills and
+                                    expand career opportunities.
                                 </p>
-                                <ul className="flex gap-x-2">
+                                <ul className="flex gap-x-2 mt-5">
                                     <li className="flex items-center">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +84,7 @@ const Timeline = () => {
                                             width="24"
                                             height="24"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
+                                            strokeWidth="1"
                                             stroke="currentColor"
                                             fill="none"
                                             strokeLinecap="round"
@@ -104,7 +109,7 @@ const Timeline = () => {
                                             width="24"
                                             height="24"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
+                                            strokeWidth="1"
                                             stroke="currentColor"
                                             fill="none"
                                             strokeLinecap="round"
@@ -131,7 +136,7 @@ const Timeline = () => {
                                             width="24"
                                             height="24"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
+                                            strokeWidth="1"
                                             stroke="currentColor"
                                             fill="none"
                                             strokeLinecap="round"
@@ -153,7 +158,7 @@ const Timeline = () => {
                                             width="24"
                                             height="24"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
+                                            strokeWidth="1"
                                             stroke="currentColor"
                                             fill="none"
                                             strokeLinecap="round"
@@ -178,9 +183,9 @@ const Timeline = () => {
                     <SplideSlide>
                         <a
                             href="https://namtech.com.au"
-                            className="card flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 h-44"
+                            className="card flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 min-h-36"
                         >
-                            <div className="card-image w-1/3 p-3">
+                            <div className="card-image w-1/3 p-3 max-w-[150px]">
                                 <img
                                     className="object-contain"
                                     src={namtech}
@@ -188,19 +193,21 @@ const Timeline = () => {
                                 />
                             </div>
 
-                            <div className="flex flex-col justify-between p-4 leading-normal">
-                                <span className="text-sm text-gray-500 dark:text-gray-400">
+                            <div className="flex flex-col p-4 leading-normal h-full">
+                                <span className="text-xs text-gray-500 dark:text-gray-400 mb-3">
                                     2021 - 2023 (N.A.M Technology Co. Ltd.)
                                 </span>
 
-                                <h5 className="mb-2 card-title">
+                                <h5 className="card-title">
                                     Frontend Developer
                                 </h5>
-                                <p className="mb-3 card-description">
-                                    Start your first programming job starting as
-                                    an intern to junior
+                                <p className="card-description">
+                                    Get my foot in the door of the industry and
+                                    gain valuable experience working with more
+                                    experienced colleagues, from intern to
+                                    junior developer
                                 </p>
-                                <ul className="flex gap-x-2">
+                                <ul className="flex gap-x-2 mt-5">
                                     <li className="flex items-center">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +215,7 @@ const Timeline = () => {
                                             width="24"
                                             height="24"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="2"
+                                            strokeWidth="1"
                                             stroke="currentColor"
                                             fill="none"
                                             strokeLinecap="round"
@@ -230,7 +237,7 @@ const Timeline = () => {
                                             width="24"
                                             height="24"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="2"
+                                            strokeWidth="1"
                                             stroke="currentColor"
                                             fill="none"
                                             strokeLinecap="round"
@@ -256,7 +263,7 @@ const Timeline = () => {
                                             width="24"
                                             height="24"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
+                                            strokeWidth="1"
                                             stroke="currentColor"
                                             fill="none"
                                             strokeLinecap="round"
@@ -279,7 +286,7 @@ const Timeline = () => {
                                             width="24"
                                             height="24"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
+                                            strokeWidth="1"
                                             stroke="currentColor"
                                             fill="none"
                                             strokeLinecap="round"
@@ -301,7 +308,7 @@ const Timeline = () => {
                                             width="24"
                                             height="24"
                                             viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
+                                            strokeWidth="1"
                                             stroke="currentColor"
                                             fill="none"
                                             strokeLinecap="round"
@@ -316,6 +323,21 @@ const Timeline = () => {
                                         </svg>
                                     </li>
                                 </ul>
+                            </div>
+                        </a>
+                    </SplideSlide>
+
+                    {/* Item 2 */}
+                    <SplideSlide>
+                        <a
+                            href="#contact"
+                            className="card flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 min-h-[200px]"
+                        >
+                            <div className="flex flex-col p-4 leading-normal h-full w-full">
+                                <h5 className="card-title w-full text-center">
+                                    I&apos;m looking for a new job to write a
+                                    new journey with me
+                                </h5>
                             </div>
                         </a>
                     </SplideSlide>
